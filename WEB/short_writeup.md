@@ -39,7 +39,7 @@ Then from the attacker's machine we execute <b>nc -lvp 4444</b> and then in brow
 
 ![fig7](php_reverse_shell.png)
 
-In the end we unzip the file with the command **unrar -x CyberComSite.rar** and read the <i>CyberCom.html</i> source code to find the flag.
+In the end we unzip the file with the command <b>unrar -x CyberComSite.rar</b> and read the <i>CyberCom.html</i> source code to find the flag.
 ![fig8](flag.png)
 
 
