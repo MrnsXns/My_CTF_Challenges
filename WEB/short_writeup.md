@@ -2,7 +2,7 @@
 
 1. Open browser and hit the url.
 
- ![fig1](init.png)
+ ![fig1](images/init.png)
 
 As we can see the site is under attack. 
 If we click the red area (AND NOW?) we get the message of the image below.
