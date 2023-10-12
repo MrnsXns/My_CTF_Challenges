@@ -37,10 +37,10 @@ in order to execute linux commands in the server. In that way we can achieve a r
 
 Then from the attacker's machine we execute <b>nc -lvp 4444</b> and then in browser execute the command <b>../index.php?page=php://filter/convert.base64-decode/resource=show_m3_the_P@sS.2gd</b>
 
-![fig7](images/php_reverse_shell.png)
+![fig7](images/php_reverse_shell.PNG)
 
 In the end we unzip the file with the command <b>unrar -x CyberComSite.rar</b> and read the <i>CyberCom.html</i> source code to find the flag.
-![fig8](images/flag.png)
+![fig8](images/flag.PNG)
 
 
 
