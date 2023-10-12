@@ -22,7 +22,7 @@ If we upload a file we get the message of the image.
 based on hint 2 we must somehow view the source code of the "validate_file.php" file in order to obtain the key-password.
 Atltough there is an LFI vulnerability we cannot see directly the content of a php file.
 However, we can read the base64 encoding of the file with the command
-<b>http://localhost/WebCTF/index.php?page=php://filter/convert.base64-encode/resource=validate_file.php</b>
+<b>localhost/WebCTF/index.php?page=php://filter/convert.base64-encode/resource=validate_file.php</b>
 
 ![fig5](read_php_file_base64.png)
 
