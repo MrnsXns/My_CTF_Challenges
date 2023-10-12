@@ -10,7 +10,7 @@ As we can see (in the url) the site may have some kind of file inclusion vulnera
 
 ![fig2](hacker_message.png)
 
-We can confirm that if we hit in the browser **localhost/WebCTF/index.php?page=../../../../etc/passwd**
+We can confirm that if we hit in the browser <b>localhost/WebCTF/index.php?page=../../../../etc/passwd</b>
 
 ![fig3](check_lfi.png)
 
