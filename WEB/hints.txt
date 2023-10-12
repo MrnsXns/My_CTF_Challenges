@@ -1,1 +1,7 @@
-@
+hint 1: There is an FileIclusion vulnerability
+
+hint 2: Somehow must view the source code of validate_file.php (zip password)
+
+hint 3: Poison the uploaded file with a php remote shell (more than one ways to achieve this).
+
+hint 4: Access CyberComp page that includes the flag. 
