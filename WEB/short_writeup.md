@@ -20,7 +20,7 @@ If we upload a file we get the message of the image.
 ![fig4](images/wrong_filename.png)
 
 based on hint 2 we must somehow view the source code of the "validate_file.php" file in order to obtain the key-password.
-Atltough there is an LFI vulnerability we cannot see directly the content of a php file.
+Although there is an LFI vulnerability we cannot see directly the content of a php file.
 However, we can read the base64 encoding of the file with the command
 <b>localhost/WebCTF/index.php?page=php://filter/convert.base64-encode/resource=validate_file.php</b>
 
@@ -30,7 +30,7 @@ Then we can decode the base64 format with a tool (e.g cyberchef) and obtain the 
 
 ![fig6](images/cyberchef.png)
 
-Doing a deeper inspection we can see that there exists some filters that checks the name of file and also if any php code is contained in the uploaded file. 
+Doing a deeper inspection we can see that there exist some filters that check the name of file and also if any php code is contained in the uploaded file. 
 This is not a problem! We can bypass these filters by encoding our php code to base64 and then uploading it to the server.
 We can use a php reverse shell payload (e.g pentestmonkey website). 
 in order to execute linux commands in the server. In that way we can achieve a reverse shell .
