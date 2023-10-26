@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="challenges_style.css">
     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <!--may not be necessary-->
+    
 </head>
 
-
-
 <script>
-    // Function to toggle the modal dialog
+    
+
+
+
+    // Function to toggle/remove the modal dialog
     function showChallenge(clickedButton) {
         var modal = document.getElementById('myModal');
 
@@ -29,7 +32,10 @@
             document.getElementById('modalContent').textContent = challenge_descr;
             document.getElementById('anchor').href='';//enter path of binary
             document.getElementById('anchor').textContent="Download binary";
+            document.getElementById('flagForm')[0].name=  'REflag';
+            
 
+            
                               
         }
         if (clickedButton.id=='WEB'){
@@ -39,7 +45,7 @@
             document.getElementById('modalContent').textContent = challenge_descr;
             document.getElementById('anchor').href='';//enter path of webpage
             document.getElementById('anchor').textContent="URL";
-
+            document.getElementById('flagForm')[0].name= 'WEBflag';
 
         }
         if (clickedButton.id=='Crypto'){
@@ -48,7 +54,10 @@
             document.getElementById('modalContent').textContent = challenge_descr;
             document.getElementById('anchor').href='';//enter path of file(s)
             document.getElementById('anchor').textContent="Download";
+            document.getElementById('flagForm')[0].name= 'CRYPTOflag';
         }
+
+        /*to do */
         if (clickedButton.id=='?'){
 
             challenge_descr="COMING SOON";
@@ -57,31 +66,27 @@
                 
         if (modal.style.display === 'none' || modal.style.display === '') {
             modal.style.display = 'block';
-           //document.getElementById('modalContent').textContent = challenge_descr;
-
-           
             elementToBlur.classList.toggle("blur"); 
-           
+            
+                       
       } 
       else {
         modal.style.display = 'none';
         elementToBlur.classList.remove("blur");
+        document.getElementById('flagForm')[0].name= 'flag';
       }
       
 
-    }
-
-    
-        
-    
-
+    }    
   </script>
+
+
 
 <body>
 
     
     <div class="container" id="container">
-        <button class="box" id="RE" onclick="showChallenge(this)">
+        <button class="box" id="RE"  onclick="showChallenge(this)">
             <h1> <b> Reverse Engineering </b> </h1>       
         </button>
         
@@ -98,7 +103,7 @@
            
         </button>
         
-        <!--make it button instead of div-->
+        
         <button class="box" id="?" onclick="showChallenge(this)"> 
             
             <h1><b>?</b></h1>
@@ -110,16 +115,23 @@
     </div>
 
     <div id="myModal">
+        
         <article id="modalContent">No description.</article>
-        <a id="anchor" href="" title="" download="">Download Binary</a>
+        <a id="anchor" href="" title="" download="">Empty</a>
 
         <div class="challengeButton"></div>
-            <button id="chalBut" onclick="showChallenge(this)"><b>Close</b></button>
+
+        <form id="flagForm" action="validate_flag.php" method="post">
+            <label id="userInput">Enter flag: </label>
+            <input type="text" id="flag" name="flag" autocomplete="off">
+            <input type="submit" value="check flag">
+          </form>
+          
+            <button id="chalBut" onclick="showChallenge(this)">Close</button>
         </div>
     </div>
-
-
     
-</body>
+   
 
+</body>
 </html>
