@@ -29,6 +29,7 @@ int final_round(){
     
    char input[17];
    printf("Can you guess the flag ? ");
+   scanf("%s",input);
     
   char lower[] = "abcdefghijklmnopqrstuvwxyz{|}";
   char digits[] = "0123456789" ;
@@ -52,17 +53,17 @@ int final_round(){
     if (offset >=0  && offset < 26){
         
         result[result_index++]=lower[offset];
-        printf("lower[%d]=%d\n",j,offset);
+        //printf("lower[%d]=%d\n",j,offset);
     }
     else if (offset >= (-32) && offset < (-6)) {
         new_offset=offset+32;
         result[result_index++]=upper[new_offset];
-        printf("upper[%d]=%d\n",j,new_offset);
+        //printf("upper[%d]=%d\n",j,new_offset);
     }
     else if (offset >= (-49) && offset <= (-40)) {
         new_offset=offset+49;
         result[result_index++]=digits[new_offset];
-        printf("digits[%d]=%d\n",j,new_offset);
+        //printf("digits[%d]=%d\n",j,new_offset);
     }
     else {
         continue;
@@ -73,8 +74,9 @@ int final_round(){
  
  
  if (strcmp(result,input)==0){
-    printf("Heres the flag\n flag_{%s}",result);
-    return 0;
+    printf("Heres the flag\nflag_{%s}",result);
+    exit(1);
+    
     }
  else { 
      printf("Wrong Flag :( . You may try again !");
@@ -93,12 +95,13 @@ int main(){
         
         printf("Can you guess the number?\n number=");
         scanf("%d",&num);
+        printf("You entered=%d",num);
         
         int random=SimpleRandGen();
         
         
         if ( num == random ) {
-            printf("Nice\n!");
+            printf("\nNice\n!");
             printf("====Almost there! KEEP GOING !!!====\n");
             final_round();
             
