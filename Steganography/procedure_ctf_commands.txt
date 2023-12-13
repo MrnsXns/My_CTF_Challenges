@@ -1,0 +1,25 @@
+1.image1 ("init.jpg")
+1.1 put all files (wise_dino.jpg, Precious_word_1.txt, hidden_words.png) in a ZIP (Precious.zip) and append image1 with the ZIP file using the command 
+"cat Precious.zip >> init.jpg" 
+
+2.@image2 ("wise_dino.jpg")
+2.1 embed the base64 encoding of @image4 ("one_step_before_success.jpg")
+2.2 add precious word 2 =sunt in DEscription metadata tag with the command "xiftool -Description='Precious_word_2=sunt' wise_dino.jpg"
+
+
+3.@image3 ("hidden_words.png")
+3.1 add a hint in comment section saying "Hint: pour some light on me"
+3.2 Play with the filters (brighteness etc.) to reveal the 2 hidden words.
+
+
+
+4. @image4 ("one_step_before_success.jpg")
+4.1 embed the flag and protected it with a passphrase ("fallacessuntrerumspecies").
+4.2 Tool:steghide
+4.3 Command: steghide embed -ef flag.txt -cf one_step_before_success.jpg
+4.4 Add a hint (hint4) message with the command cat hint4.txt >> one_step_before_success.jpg" for wordlist.
+4.5 Add word with command "echo "Precious word4 = rerum">> one_step_before_success.jpg"
+4.6 add at the comment section (exiftool) a message that says to "STRINGS reveal a lot"  with the command "exiftool -comment='STRINGS reveal a lot' one_step_before_success.jpg"
+! make a wordlist with all possible combinations of hidden words using crunch tool and break the password protected flag archive.
+
+
