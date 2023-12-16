@@ -19,7 +19,7 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;
     text-align: center;
-/*may delete*/
+/*may delete
 
     position:absolute;
     width: 120px;
@@ -30,6 +30,7 @@ h1 {
     right:30%;
     left:30%;
     margin-left:-150px;
+    */
 }
 
 
@@ -39,9 +40,9 @@ h1 {
     border: 1px solid #080707;
     box-shadow: rgba(54, 51, 51, 0.973) -5px 5px, rgba(0, 10, 3, 0.4) -10px 10px, rgba(0, 10, 3, 0.4) -15px 15px, rgba(0, 10, 3, 0.4) -20px 20px, rgba(0, 10, 3, 0.4) -25px 25px;
 /*may delete*/
-    width:500px;
+    /*width:500px;
     height:300px;
-    
+    */
 }
 .box:hover{
     color: rgb(255, 255, 255); /* Change text color to blue on hover */

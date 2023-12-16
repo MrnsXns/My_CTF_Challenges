@@ -1,5 +1,9 @@
 <?php
-// Change this to your connection info. (4)
+
+session_start();
+
+$_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
+
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -53,7 +57,10 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
             $stmt->execute();
-            echo "You have successfully registered! You can now login!";
+            #echo "You have successfully registered! You can now go back and login!";
+			header('Location: http://'.$_SERVER['SERVER_ADDR'].'/Jeopardy_CTF/registration/successfull_registration_message.php');
+			
+			
         } else {
             // Something is wrong with the SQL statement, so you must check to make sure your accounts table exists with all three fields.
             echo 'Could not prepare statement!';

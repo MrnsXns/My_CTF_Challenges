@@ -28,15 +28,20 @@ if (mysqli_connect_errno()) {
 }
 
 
-$query='SELECT username,completed FROM users ORDER BY completed DESC';
+$query='SELECT username,completed, challenge_timestamp FROM users ORDER BY completed DESC, challenge_timestamp ASC';
 $res=mysqli_query($con,$query);
-$data=array();
+$username_data=array();
+$timestamp_data=array();
+
 while($row=mysqli_fetch_assoc($res))
 {
-	array_push($data,$row["username"]);
+	array_push($username_data,$row["username"]);
+  array_push($timestamp_data,$row["challenge_timestamp"]);
+  
 	
 	
 }
+
 echo '
   
     <main>
@@ -51,18 +56,18 @@ echo '
         <table>';
 $i=0;
 
-for ($i=0;$i<count($data);$i++){
-
-	if($_SESSION['name']==$data[$i]){
+for ($i=0;$i<count($username_data);$i++){
+  
+	if($_SESSION['name']==$username_data[$i]){
 		echo '<tr>
 		<td class="number"style="color:blue">'.($i+1).'</td>
 		
 		<td class="name" style="color:blue">
-		<b>'.$data[$i].'</b>
+		<b>'.$username_data[$i].'</b>
 		</td>
 		
-		<td class="points">
-		
+		<td class="timestamp" style="color:blue">
+		<b>'.$timestamp_data[$i].'</b>
 		</td>
 	</tr>
 	<tr>';
@@ -70,8 +75,8 @@ for ($i=0;$i<count($data);$i++){
 	else{
 	echo '<tr>
 	<td class="number">'.($i+1).'</td>
-	<td class="name">'.$data[$i].'</td>
-	<td class="points">
+	<td class="name">'.$username_data[$i].'</td>
+	<td class="points">'.$timestamp_data[$i].'
 	  
 	</td>
   </tr>

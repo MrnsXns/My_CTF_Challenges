@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+$_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
+
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
@@ -40,7 +43,7 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
             $_SESSION['id'] = $userId;
             echo 'Welcome ' . $_SESSION['name'] . '!';
             
-            header('Location:http://localhost/Jeopardy_CTF/main_/challenges.php');
+            header('Location: http://'.$_SESSION['server_ip'].'/Jeopardy_CTF/main_/challenges.php');
         } else {
             // Incorrect password
             echo 'Incorrect username and/or password!';

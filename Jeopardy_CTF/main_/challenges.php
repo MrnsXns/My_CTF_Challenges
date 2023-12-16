@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+$_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
+
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -11,16 +14,14 @@ if (mysqli_connect_errno()) {
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-if ($stmt = $con->prepare('SELECT RE,WEB,CRYPTO,PWN FROM users WHERE username = ?')) {
+if ($stmt = $con->prepare('SELECT RE,WEB,CRYPTO,STEGO FROM users WHERE username = ?')) {
     $stmt->bind_param('s', $_SESSION['name']);
 	$stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($RE,$WEB,$CRYPTO,$PWN);
+    $stmt->bind_result($RE,$WEB,$CRYPTO,$STEGO);
     $stmt->fetch();
    
-    /*if ($CRYPTO==1){
-        echo "<script>document.getElementById('CRYPTO').disabled=true;</script>";
-    }*/
+   
     
 }else {
     // Something is wrong with the SQL statement, so you must check to make sure your accounts table exists with all three fields.
@@ -37,16 +38,19 @@ $con->close();
 #session_start();
 
 // If the user is not logged in redirect to the login page...
+
+
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: http://localhost/Jeopardy_CTF/login/login.html');
+	header('Location: http://'.$_SERVER['SERVER_ADDR'].'/Jeopardy_CTF/login/login.php');
 	exit;
 }
-?>
+//?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -56,8 +60,7 @@ if (!isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" type="text/css" href="challenges_style.css">
     <link rel="stylesheet" type="text/css" href="navbar_style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> <!--may not be necessary-->
-    
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
 </head>
 
 <script>
@@ -84,7 +87,9 @@ if (!isset($_SESSION['loggedin'])) {
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').setAttribute("download","re_challenge_binary");
-            document.getElementById('anchor').href='http://STATIC_IP_OF_SERVER/Jeopardy_CTF/re_challenge/feelLucky.c';//enter path of binary
+            
+            
+            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/re_challenge/feelLucky.c';//'http://192.168.1.182/Jeopardy_CTF/re_challenge/feelLucky.c';//enter path of binary
             document.getElementById('anchor').textContent="Download binary";
             document.getElementById('flagForm')[0].name=  'REflag';
             
@@ -97,7 +102,7 @@ if (!isset($_SESSION['loggedin'])) {
             challenge_descr="Web challenge description";
             
             document.getElementById('modalContent').innerHTML = challenge_descr;
-            document.getElementById('anchor').href='web_challenge/index.php';//enter path of webpage
+            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/web_challenge/web_index.php';//enter path of webpage
             document.getElementById('anchor').textContent="URL";
             document.getElementById('flagForm')[0].name= 'WEBflag';
 
@@ -114,15 +119,21 @@ if (!isset($_SESSION['loggedin'])) {
             <p><i><u>Hint 3:</u></i> The key consist of English words </i></p>`;
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
-            document.getElementById('anchor').href='http://STATIC_IP_OF_SERVER/Jeopardy_CTF/crypto_challenge/messages.txt';//enter path of file(s)
+            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/crypto_challenge/messages.zip';//enter path of file(s)
             document.getElementById('anchor').textContent="Download encrypted messages";
             document.getElementById('flagForm')[0].name= 'CRYPTOflag';
         }
 
         /*to do */
-        if (clickedButton.id=='?'){
+        if (clickedButton.id=='Stego'){
 
-            challenge_descr="COMING SOON";
+            challenge_descr="Steganography challenge description";
+
+            document.getElementById('modalContent').innerHTML = challenge_descr;
+           
+            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/steganography_challenge/init.zip';//doesnt work
+            document.getElementById('anchor').textContent="Download image";
+            document.getElementById('flagForm')[0].name= 'STEGOflag';
         }
         
                 
@@ -150,9 +161,9 @@ if (!isset($_SESSION['loggedin'])) {
     
     
         <div class="navbar">
-           <a class="active" href="http://localhost/Jeopardy_CTF/main_/profile_page.php"><i class="fa-solid fa-ranking-star"></i><b><u><?=$_SESSION['name']?></u></b></a>
+           <a class="active" href='http://<?=$_SESSION["server_ip"]?>/Jeopardy_CTF/main_/profile_page.php'><i class="fa-solid fa-ranking-star"></i><b><u><?=$_SESSION['name']?></u></b></a>
           
-           <a href="http://localhost/Jeopardy_CTF/main_/logout.php"><i class="fas fa-sign-out-alt"></i><b><u>Logout</u></b></a>
+           <a href='http://<?=$_SESSION["server_ip"]?>/Jeopardy_CTF/main_/logout.php'><i class="fas fa-sign-out-alt"></i><b><u>Logout</u></b></a>
         </div>
      
 
@@ -179,9 +190,9 @@ if (!isset($_SESSION['loggedin'])) {
         </button>
         
         
-        <button class="box" id="?" onclick="showChallenge(this)"> 
+        <button class="box" id="Stego" onclick="showChallenge(this)"> 
             
-            <h1 id="?_header"><b>?</b></h1>
+            <h1 id="STEGO_header"><b>Steganography</b></h1>
 
         </button>
 
@@ -195,13 +206,14 @@ if (!isset($_SESSION['loggedin'])) {
         <a id="anchor" href="" title="" >Empty</a>
 
         <div class="challengeButton"></div>
-
+ 
         <form id="flagForm" action="validate_flag.php" method="post">
             <label id="userInput">Enter flag: </label>
             <input type="text" id="flag" name="flag" value="" autocomplete="off">
             <input type="submit" value="check flag">
           </form>
-          
+
+
             <button id="chalBut" onclick="showChallenge(this)">Close</button>
         </div>
     </div>
@@ -212,7 +224,7 @@ if (!isset($_SESSION['loggedin'])) {
         var c= "<?php echo $CRYPTO;?>"; 
         var r= "<?php echo $RE;?>";
         var w= "<?php echo $WEB;?>";
-        var p= "<?php echo $PWN;?>";
+        var s= "<?php echo $STEGO;?>";
             if (c==1){
                 document.getElementById("CRYPTO_header").style.color="blue";
                 document.getElementById("CRYPTO_header").innerText="CRYPTO \n\(completed)";
@@ -228,10 +240,10 @@ if (!isset($_SESSION['loggedin'])) {
                 document.getElementById("WEB_header").innerText="WEB \n\(completed)";
                 document.getElementById("WEB").disabled=true;
              }
-             if (p==1){
-                document.getElementById("PWN_header").style.color="blue";
-                document.getElementById("PWN_header").innerText="PWN \n\(completed)";
-                document.getElementById("PWN").disabled=true;
+             if (s==1){
+                document.getElementById("STEGO_header").style.color="blue";
+                document.getElementById("STEGO_header").innerText="Steganography \n\(completed)";
+                document.getElementById("Stego").disabled=true;
              }
              
 
@@ -265,5 +277,4 @@ if (!isset($_SESSION['loggedin'])) {
 
 </body>
 </html>
-
 
