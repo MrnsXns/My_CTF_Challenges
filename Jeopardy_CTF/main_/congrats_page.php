@@ -82,7 +82,7 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
                         <i class="fas fa-check"></i>
                     </div>
                     <h4 class="congratulation-contents-title"> Well Done <b><?=$_SESSION["name"]?></b> ! </h4>
-                    <p class="congratulation-contents-para"> Nice work! Proceed to the next challenge. </p>
+                    <p class="congratulation-contents-para"> Nice work!. </p>
                     <div class="btn-wrapper mt-4">
                         <a href='http://<?=$_SESSION["server_ip"]?>/Jeopardy_CTF/main_/challenges.php' class="cmn-btn btn-bg-1"> Back to Challenges </a>
                     </div>
