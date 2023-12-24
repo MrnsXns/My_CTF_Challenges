@@ -1,16 +1,18 @@
 
+
+
 body{
     
     background-color: rgb(51, 92, 92);}
 
-    button:hover{
+button:hover{
        
-        text-shadow: 0 0 50px rgb(233, 22, 22); /* Add a text shadow for a glow effect */
+	text-shadow: 0 0 50px rgb(233, 22, 22); /* Add a text shadow for a glow effect */
       }
       
   .container{
     margin: 20px auto;
-    width:700px;
+    width:600px;
     height:400px;
     
     
@@ -69,6 +71,7 @@ body{
 
   .challengeButton{
     text-align: center;
+
   }
 
   a{
