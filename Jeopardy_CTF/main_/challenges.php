@@ -4,8 +4,8 @@ session_start();
 $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
 
 $DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
+$DATABASE_USER = 'ctf_user';
+$DATABASE_PASS = 'ctf_user123';
 $DATABASE_NAME = 'ctf_db';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -82,7 +82,7 @@ if (!isset($_SESSION['loggedin'])) {
         if (clickedButton.id=='RE'){
             
             
-            challenge_descr=`<h1>This is the first line.</h1>
+            challenge_descr=`<p style="font-size:80px;"> 35 points</p><h1>This is the first line.</h1>
             <h2>This is the second line.</h2>
             And this is the third line.`;
 
@@ -101,7 +101,7 @@ if (!isset($_SESSION['loggedin'])) {
         }
         if (clickedButton.id=='WEB'){
            
-            challenge_descr="Web challenge description";
+            challenge_descr='<p style="font-size:80px;"> 30 points</p> <p>Web challenge description</p>';
             
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/web_challenge/web_index.php';//enter path of webpage
@@ -112,11 +112,12 @@ if (!isset($_SESSION['loggedin'])) {
         }
         if (clickedButton.id=='Crypto'){
             
-            challenge_descr=`<p>In this challenge you are asking to find the key (or part of it) in order to obtain the flag.<p>
+            challenge_descr=`<p style="font-size:80px;"> 15 points</p> 
+            <p>In this challenge you are asking to find the key in order to obtain the flag.<p>
             <p>An information leakage occured by an insider. The insider confess that he reveals the employee id and password 
-            of <b>admin</b> who has access to the server room (<b>eid:43567289,pass:4!25as%8F</b>). I have at my disposal the encrypted 
-            messages (<u>ONE TIME PAD</u>) exchanged between the perpetrator and the insider. Can you decoded them and retrieve the flag? 
-            All the messages have been encrypted with the same OTP key.</p>
+            of <b>admin</b> who has access to the server room (<b>eid:43567289,pass:4!25as%8F</b>). You have access at the encrypted 
+            messages (<u>ONE TIME PAD</u>) exchanged between the perpetrator and the insider. Can you decode them and retrieve the flag? 
+            All the messages have been encrypted with the <u>same OTP key</u>.</p>
             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
             <p><i><u>Hint 2:</u></i> Every encrypted message and the key have the same length</p>
             <p><i><u>Hint 3:</u></i> The key consist of English words </i></p>`;
@@ -128,10 +129,10 @@ if (!isset($_SESSION['loggedin'])) {
             document.getElementById('flagForm')[0].name= 'CRYPTOflag';
         }
 
-        /*to do */
+        
         if (clickedButton.id=='Stego'){
 
-            challenge_descr="Steganography challenge description";
+            challenge_descr='<p style="font-size:80px;"> 20 points</p>Steganography challenge description';
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
            
@@ -178,11 +179,12 @@ if (!isset($_SESSION['loggedin'])) {
 
     <div class="container" id="container" >
        
-        <!--<div class="row">-->
+        
             <button class="box" id="RE"  onclick="showChallenge(this) ">
             
-                <h1 id="RE_header"> <b> Reverse  Engineering </b> </h1>
-
+                <h1 id="RE_header"> <b> Reverse  Engineering </b></h1>
+                
+                
             </button>
         
         
@@ -210,7 +212,7 @@ if (!isset($_SESSION['loggedin'])) {
 
         </div>   
 
-    <!--</div>-->
+    
 
     <div id="myModal">
         
@@ -237,24 +239,24 @@ if (!isset($_SESSION['loggedin'])) {
         var r= "<?php echo $RE;?>";
         var w= "<?php echo $WEB;?>";
         var s= "<?php echo $STEGO;?>";
-            if (c==1){
+            if (c==15){
                 document.getElementById("CRYPTO_header").style.color="blue";
-                document.getElementById("CRYPTO_header").innerText="CRYPTO \n\(completed)";
+                document.getElementById("CRYPTO_header").innerText="CRYPTO \n\(Done)";
                 document.getElementById("Crypto").disabled=true;
              }
-             if (r==1){
+             if (r==35){
                 document.getElementById("RE_header").style.color="blue";
-                document.getElementById("RE_header").innerText="Reverse Engineering \n\(completed)";
+                document.getElementById("RE_header").innerText="Reverse Engineering \n\(Done)";
                 document.getElementById("RE").disabled=true;
              }
-             if (w==1){
+             if (w==30){
                 document.getElementById("WEB_header").style.color="blue";
-                document.getElementById("WEB_header").innerText="WEB \n\(completed)";
+                document.getElementById("WEB_header").innerText="WEB \n\(Done)";
                 document.getElementById("WEB").disabled=true;
              }
-             if (s==1){
+             if (s==20){
                 document.getElementById("STEGO_header").style.color="blue";
-                document.getElementById("STEGO_header").innerText="Steganography \n\(completed)";
+                document.getElementById("STEGO_header").innerText="Steganography \n\(Done)";
                 document.getElementById("Stego").disabled=true;
              }
              
