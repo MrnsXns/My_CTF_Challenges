@@ -46,13 +46,13 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
             header('Location: http://'.$_SESSION['server_ip'].'/Jeopardy_CTF/main_/challenges.php');
         } else {
             // Incorrect password
-            echo 'Incorrect username and/or password!';
+            header('Location: http://'.$_SESSION['server_ip'].'/Jeopardy_CTF/login/authentication_error_page.html');
             
             
         }
     } else {
         // Incorrect username
-        echo 'Incorrect username and/or password!';
+        header('Location: http://'.$_SESSION['server_ip'].'/Jeopardy_CTF/login/authentication_error_page.html');
     }
 
 	$stmt->close();
