@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,8 +17,8 @@
 <?php
 session_start();
 $DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
+$DATABASE_USER = 'ctf_user';
+$DATABASE_PASS = 'ctf_user123';
 $DATABASE_NAME = 'ctf_db';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -28,16 +28,17 @@ if (mysqli_connect_errno()) {
 }
 
 
-$query='SELECT username,completed, challenge_timestamp FROM users ORDER BY completed DESC, challenge_timestamp ASC';
+$query='SELECT username,points, challenge_timestamp FROM users ORDER BY points DESC, challenge_timestamp ASC';
 $res=mysqli_query($con,$query);
 $username_data=array();
 $timestamp_data=array();
+$points_data=array();
 
 while($row=mysqli_fetch_assoc($res))
 {
-	array_push($username_data,$row["username"]);
+  array_push($username_data,$row["username"]);
   array_push($timestamp_data,$row["challenge_timestamp"]);
-  
+    array_push($points_data,$row["points"]);
 	
 	
 }
@@ -60,24 +61,31 @@ for ($i=0;$i<count($username_data);$i++){
   
 	if($_SESSION['name']==$username_data[$i]){
 		echo '<tr>
-		<td class="number"style="color:blue">'.($i+1).'</td>
+		<td class="number" style="color:white;text-shadow: 2px 2px 2px black;">'.($i+1).'</td>
 		
-		<td class="name" style="color:blue">
-		<b>'.$username_data[$i].'</b>
+		<td class="name" style="color:white; text-shadow: 2px 2px 2px black;">
+		<b><i>'.$username_data[$i].'</i></b>
 		</td>
 		
-		<td class="timestamp" style="color:blue">
+		<td class="points" style="color:black">
+		<b>'.$points_data[$i].' points</b>
+		</td>
+		
+		<td class="timestamp" style="color:black">
 		<b>'.$timestamp_data[$i].'</b>
 		</td>
+		
+		
 	</tr>
 	<tr>';
 	}
 	else{
 	echo '<tr>
-	<td class="number">'.($i+1).'</td>
-	<td class="name">'.$username_data[$i].'</td>
-	<td class="points">'.$timestamp_data[$i].'
-	  
+	<td class="number"style="color:rgb(51, 92, 92);">'.($i+1).'</td>
+	<td class="name" style="color:rgb(51, 92, 92);"><b>'.$username_data[$i].'</b></td>
+	<td class="points" style="color:rgb(51, 92, 92);"><b>'.$points_data[$i].' points</b>  
+	<td class="timestamp" style="color:rgb(51, 92, 92);"><b>'.$timestamp_data[$i].'</b>  </td>
+	
 	</td>
   </tr>
   <tr>';}
@@ -86,4 +94,3 @@ for ($i=0;$i<count($username_data);$i++){
 #print_r($data);
 $con->close();
 ?>
-
