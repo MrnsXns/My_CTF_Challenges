@@ -82,9 +82,15 @@ if (!isset($_SESSION['loggedin'])) {
         if (clickedButton.id=='RE'){
             
             
-            challenge_descr=`<p style="font-size:80px;"> 35 points</p><h1>This is the first line.</h1>
-            <h2>This is the second line.</h2>
-            And this is the third line.`;
+            challenge_descr=`<p style="font-size:80px;text-shadow: 4px 4px 4px red;">Fortunate Sam</p>
+            <p style="font-size:50px;">35 points</p>
+            <p>Sam is a self-proclaimed luck master who believes he can conquer any game of chance.
+            Sam recently won a high-stakes game and bagged a grand prize, proudly securing the elusive flag. 
+            So confident in his luck, Sam boasts that no one else possesses the skills to find the flag hidden within the game.</p> 
+            <p>Use you RE skills to outsmart Sam and prove that luck favors the prepared mind.</p>
+            <p> Good luck, challenger!</p>
+            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
+            <p><i><u>Hint 2:</u></i> You can apply any RE method you want</p>`
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').setAttribute("download","re_challenge_binary");
@@ -103,7 +109,7 @@ if (!isset($_SESSION['loggedin'])) {
            
             challenge_descr=`<p style="font-size:80px;">30 points</p>
              <p>A notorious hacking group, known for their unparalleled skills, has compromise the website of CyberCom company.</p>
-             <p>Your mission, as a cybersecurity professional, is to <b>find the flag that is hidden in CyberCom's legit website.</b></p>
+             <p>Your mission, as a cybersecurity professional, is to <b>find the hidden flag in CyberCom's legit website.</b></p>
              <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
              <p><i><u>Hint 2:</u></i> You must, somehow, gain access to CyberCom's compromised web server</p>
              <p><i><u>Hint 3:</u></i> Hackers have a message for you.</p>`
@@ -138,7 +144,15 @@ if (!isset($_SESSION['loggedin'])) {
         
         if (clickedButton.id=='Stego'){
 
-            challenge_descr='<p style="font-size:80px;"> 20 points</p>Steganography challenge description';
+            challenge_descr=`<p style="font-size:80px;text-shadow: 4px 4px 4px red;">Stealthy Snapshots</p> 
+            <p style="font-size:50px;">20 points</p> 
+            <p>Welcome to the enigmatic realm of "Stealthy Snapshots". Uncover the hidden layers concealed within a seemingly ordinary image.
+            The challenge begins with a single  image that harbors a labyrinth of secrets, leading you on a digital treasure hunt.</p>
+            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}.</i></p>
+            <p><i><u>Hint 2:</u></i> You must find 4 images in total. </p>
+            <p><i><u>Hint 3:</u></i> Each image contains 1 or 2 camouflaged words(<b>5 words at the end</b>).</p>
+            <p><i><u>Hint 4:</u></i> Each image contains complementary hints.</p>`
+
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
            
