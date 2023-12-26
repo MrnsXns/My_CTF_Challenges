@@ -118,7 +118,7 @@ if (!isset($_SESSION['loggedin'])) {
         }
         if (clickedButton.id=='Crypto'){
             
-            challenge_descr=`<p style="font-size:80px;"> 15 points</p> 
+            challenge_descr=`<p style="font-size:80px;">15 points</p> 
             <p>In this challenge you are asking to find the key in order to obtain the flag.<p>
             <p>An information leakage occured by an insider. The insider confess that he reveals the employee id and password 
             of <b>admin</b> who has access to the server room (<b>eid:43567289,pass:4!25as%8F</b>). You have access at the encrypted 
@@ -126,7 +126,7 @@ if (!isset($_SESSION['loggedin'])) {
             All the messages have been encrypted with the <u>same OTP key</u>.</p>
             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
             <p><i><u>Hint 2:</u></i> Every encrypted message and the key have the same length</p>
-            <p><i><u>Hint 3:</u></i> The key consist of English words </i></p>`;
+            <p><i><u>Hint 3:</u></i> Encrypted messages may contain words in bold. </i></p>`;
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/crypto_challenge/messages.zip';//enter path of file(s)
