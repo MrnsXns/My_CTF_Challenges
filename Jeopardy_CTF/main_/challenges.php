@@ -94,9 +94,7 @@ if (!isset($_SESSION['loggedin'])) {
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').setAttribute("download","re_challenge_binary");
-            
-            
-            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/re_challenge/feelLucky.c';//'http://192.168.1.182/Jeopardy_CTF/re_challenge/feelLucky.c';//enter path of binary
+            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/re_challenge/feelLucky.c';
             document.getElementById('anchor').textContent="Download binary";
             document.getElementById("anchor").style.color = "#ff0000";
             document.getElementById('flagForm')[0].name=  'REflag';
@@ -107,13 +105,13 @@ if (!isset($_SESSION['loggedin'])) {
         }
         if (clickedButton.id=='WEB'){
            
-            challenge_descr=`<p style="font-size:80px;">30 points</p>
+            challenge_descr=`<p style="font-size:80px;text-shadow: 4px 4px 4px red;">Site Compromised</p>
+            <p style="font-size:50px;">30 points</p>
              <p>A notorious hacking group, known for their unparalleled skills, has compromise the website of CyberCom company.</p>
              <p>Your mission, as a cybersecurity professional, is to <b>find the hidden flag in CyberCom's legit website.</b></p>
              <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
              <p><i><u>Hint 2:</u></i> You must, somehow, gain access to CyberCom's compromised web server</p>
              <p><i><u>Hint 3:</u></i> Hackers have a message for you.</p>`
-            
             
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/web_challenge/web_index.php';//enter path of webpage
@@ -124,7 +122,8 @@ if (!isset($_SESSION['loggedin'])) {
         }
         if (clickedButton.id=='Crypto'){
             
-            challenge_descr=`<p style="font-size:80px;">15 points</p> 
+            challenge_descr=`<p style="font-size:80px;text-shadow: 4px 4px 4px red;">Silent Betrayal</p> 
+            <p style="font-size:50px;">15 points</p> 
             <p>In this challenge you are asking to find the key in order to obtain the flag.<p>
             <p>An information leakage occured by an insider. The insider confess that he reveals the employee id and password 
             of <b>admin</b> who has access to the server room (<b>eid:43567289,pass:4!25as%8F</b>). You have access at the encrypted 
@@ -150,9 +149,8 @@ if (!isset($_SESSION['loggedin'])) {
             The challenge begins with a single  image that harbors a labyrinth of secrets, leading you on a digital treasure hunt.</p>
             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}.</i></p>
             <p><i><u>Hint 2:</u></i> You must find 4 images in total. </p>
-            <p><i><u>Hint 3:</u></i> Each image contains 1 or 2 camouflaged words(<b>5 words at the end</b>).</p>
+            <p><i><u>Hint 3:</u></i> Each image contains 1 or 2 camouflaged words (<b>5 words in total</b>).</p>
             <p><i><u>Hint 4:</u></i> Each image contains complementary hints.</p>`
-
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
            
