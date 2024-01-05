@@ -5,8 +5,8 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
 
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
+$DATABASE_USER = 'ctf_user';
+$DATABASE_PASS = 'ctf_user123';
 $DATABASE_NAME = 'ctf_db';
 // Try and connect using the info above.
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -46,13 +46,13 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
             header('Location: http://'.$_SESSION['server_ip'].'/Jeopardy_CTF/main_/challenges.php');
         } else {
             // Incorrect password
-            header('Location: http://'.$_SESSION['server_ip'].'/Jeopardy_CTF/login/authentication_error_page.html');
+            echo 'Incorrect username and/or password!';
             
             
         }
     } else {
         // Incorrect username
-        header('Location: http://'.$_SESSION['server_ip'].'/Jeopardy_CTF/login/authentication_error_page.html');
+        echo 'Incorrect username and/or password!';
     }
 
 	$stmt->close();
