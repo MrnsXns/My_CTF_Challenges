@@ -2,12 +2,7 @@
     session_start();
 
     $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
-    #echo $_POST['flag'];
-    #echo  hash('sha256', 'flag_RE');
-    #$user_hash=hash('sha256', $_POST['WEBflag']);
-    #echo $user_hash;
-    #$f= $_POST['buttonId'];
-    #echo $f;
+    
    
     function updateDatabase($col,$chal_points){
         // Checking, if post value is 
@@ -85,5 +80,4 @@
     }
     
 ?> 
-
 
