@@ -20,7 +20,9 @@ $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'ctf_user';
 $DATABASE_PASS = 'ctf_user123';
 $DATABASE_NAME = 'ctf_db';
+
 // Try and connect using the info above.
+
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if (mysqli_connect_errno()) {
     // If there is an error with the connection, stop the script and display the error.
@@ -61,13 +63,13 @@ for ($i=0;$i<count($username_data);$i++){
   
 	if($_SESSION['name']==$username_data[$i]){
 		echo '<tr>
-		<td class="number" style="color:white;text-shadow: 2px 2px 2px black;">'.($i+1).'</td>
+		<td class="number" style="color:black;text-shadow: 2px 2px 2px red;">'.($i+1).'</td>
 		
-		<td class="name" style="color:white; text-shadow: 2px 2px 2px black;">
+		<td class="name" style="color:black; text-shadow: 2px 2px 2px red;">
 		<b><i>'.$username_data[$i].'</i></b>
 		</td>
 		
-		<td class="points" style="color:black">
+		<td class="points" style="black;">
 		<b>'.$points_data[$i].' points</b>
 		</td>
 		
@@ -91,6 +93,5 @@ for ($i=0;$i<count($username_data);$i++){
   <tr>';}
 }
 
-#print_r($data);
 $con->close();
 ?>
