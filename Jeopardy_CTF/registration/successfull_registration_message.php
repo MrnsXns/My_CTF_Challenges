@@ -36,7 +36,7 @@
         </style>
    </head>
    <script>
-    function redirect(){setTimeout(myURL, 2000);};
+    function redirect(){setTimeout(myURL, 1000);};
     function myURL() {
          document.location.href = "../login/login.php";
       }
