@@ -62,7 +62,7 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
         display: block;
     }
     .cmn-btn.btn-bg-1 {
-        background: #65c18c;
+        background: #6176f6;
         color: #fff;
         border: 2px solid transparent;
         border-radius:3px;
@@ -82,7 +82,7 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
                         <i class="fas fa-check"></i>
                     </div>
                     <h4 class="congratulation-contents-title"> Well Done <b><?=$_SESSION["name"]?></b> ! </h4>
-                    <p class="congratulation-contents-para"> <b>Nice work !!!</b> </p>
+                    <p class="congratulation-contents-para"> Nice work! Proceed to the next challenge. </p>
                     <div class="btn-wrapper mt-4">
                         <a href='http://<?=$_SESSION["server_ip"]?>/Jeopardy_CTF/main_/challenges.php' class="cmn-btn btn-bg-1"> Back to Challenges </a>
                     </div>
