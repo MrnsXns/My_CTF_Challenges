@@ -131,7 +131,7 @@ if (!isset($_SESSION['loggedin'])) {
             All the messages have been encrypted with the <u>same OTP key</u>.</p>
             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
             <p><i><u>Hint 2:</u></i> Every encrypted message and the key have the same length</p>
-            <p><i><u>Hint 3:</u></i> Encrypted messages may contain words in bold. </i></p>`;
+            <p><i><u>Hint 3:</u></i> Encrypted messages have derived from plaintexts that may contain words in bold. </i></p>`;
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/crypto_challenge/messages.zip';//enter path of file(s)
