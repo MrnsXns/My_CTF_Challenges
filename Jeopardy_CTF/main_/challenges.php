@@ -126,7 +126,7 @@ if (!isset($_SESSION['loggedin'])) {
             <p style="font-size:50px;">15 points</p> 
             <p>In this challenge you are asking to find the key in order to obtain the flag.<p>
             <p>An information leakage occured by an insider. The insider confess that he reveals the employee id and password 
-            of <b>admin</b> who has access to the server room (<b>eid:43567289,pass:4!25as%8F</b>). You have access at the encrypted 
+            of <b>admin</b> who has access to the server room (<b>eid:43567289,pass:4!25as%8F</b>). You have access to the encrypted 
             messages (<u>ONE TIME PAD</u>) exchanged between the perpetrator and the insider. Can you decode them and retrieve the flag? 
             All the messages have been encrypted with the <u>same OTP key</u>.</p>
             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
