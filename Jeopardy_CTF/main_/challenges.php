@@ -150,7 +150,7 @@ if (!isset($_SESSION['loggedin'])) {
             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}.</i></p>
             <p><i><u>Hint 2:</u></i> You must find 4 images in total. </p>
             <p><i><u>Hint 3:</u></i> Each image contains 1 or 2 camouflaged words (<b>5 words in total</b>).</p>
-            <p><i><u>Hint 4:</u></i> Each image contains complementary hints.</p>`
+            <p><i><u>Hint 4:</u></i> Each image contains extra hints.</p>`
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
            
