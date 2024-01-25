@@ -89,8 +89,8 @@ if (!isset($_SESSION['loggedin'])) {
             So confident in his luck, Sam boasts that no one else possesses the skills to find the flag hidden within the game.</p> 
             <p>Use you RE skills to outsmart Sam and prove that luck favors the prepared mind.</p>
             <p> Good luck, challenger!</p>
-            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
-            <p><i><u>Hint 2:</u></i> You can apply any RE method you want</p>`
+            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag_{...}.</i></p>
+            <p><i><u>Hint 2:</u></i> You can apply any RE method you want.</p>`
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').setAttribute("download","re_challenge_binary");
@@ -109,8 +109,8 @@ if (!isset($_SESSION['loggedin'])) {
             <p style="font-size:50px;">30 points</p>
              <p>A notorious hacking group, known for their unparalleled skills, has compromise the website of CyberCom company.</p>
              <p>Your mission, as a cybersecurity professional, is to <b>find the hidden flag in CyberCom's legit website.</b></p>
-             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
-             <p><i><u>Hint 2:</u></i> You must, somehow, gain access to CyberCom's compromised web server</p>
+             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}.</i></p>
+             <p><i><u>Hint 2:</u></i> You must, somehow, gain access to CyberCom's compromised web server.</p>
              <p><i><u>Hint 3:</u></i> Hackers have a message for you.</p>`
             
             document.getElementById('modalContent').innerHTML = challenge_descr;
@@ -129,8 +129,8 @@ if (!isset($_SESSION['loggedin'])) {
             of <b>admin</b> who has access to the server room (<b>eid:43567289,pass:4!25as%8F</b>). You have access to the encrypted 
             messages (<u>ONE TIME PAD</u>) exchanged between the perpetrator and the insider. Can you decode them and retrieve the flag? 
             All the messages have been encrypted with the <u>same OTP key</u>.</p>
-            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}</i></p>
-            <p><i><u>Hint 2:</u></i> Every encrypted message and the key have the same length</p>
+            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}.</i></p>
+            <p><i><u>Hint 2:</u></i> Every encrypted message and the key have the same length.</p>
             <p><i><u>Hint 3:</u></i> Encrypted messages have derived from plaintexts that may contain words in bold. </i></p>`;
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
