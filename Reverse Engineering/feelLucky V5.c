@@ -40,7 +40,7 @@ int SimpleRandGen(){
 	srand(time(NULL));
 
 	// Generate and print a random number between 0 and RAND_MAX
-	int random_number = 5;//rand();
+	int random_number = rand();
     	return random_number;    
 }
 
