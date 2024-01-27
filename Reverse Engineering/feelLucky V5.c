@@ -104,9 +104,6 @@ int guard() {
 }
 
 int final_round(){
-
-   
-	char message_2[6]={lower[5],lower[11],lower[0],lower[6],lower[26],'\0'}; //flag{
    
    	char input[14];
    	char *result;//[14];
