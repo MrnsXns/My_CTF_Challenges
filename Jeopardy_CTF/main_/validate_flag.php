@@ -41,7 +41,7 @@
 
 
 
-	if (isset($_POST['REflag']) && hash('sha256',$_POST['REflag'])=="5b29eb6fe26e504e03af6b19876294dadae2866657be85322965cd7041d86b4c"){
+	if (isset($_POST['REflag']) && hash('sha256',$_POST['REflag'])=="0ffdf6a2b35b74b4d46cad58daafba32f5239ee2d3cf2c176f3767ad076a1936"){
      /*$a= "re flag ok";
      echo json_encode($a);*/
      updateDatabase("RE",35);
