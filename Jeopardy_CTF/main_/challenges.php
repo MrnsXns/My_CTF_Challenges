@@ -89,7 +89,7 @@ if (!isset($_SESSION['loggedin'])) {
             So confident in his luck, Sam boasts that no one else possesses the skills to find the flag hidden within the game.</p> 
             <p>Use you RE skills to outsmart Sam and prove that luck favors the prepared mind.</p>
             <p> Good luck, challenger!</p>
-            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag_{...}.</i></p>
+            <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}.</i></p>
             <p><i><u>Hint 2:</u></i> You can apply any RE method you want.</p>`
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
