@@ -4,7 +4,7 @@
 
 2.@image2 ("wise_dino.jpg")
 2.1 embed the base64 encoding of @image4 ("one_step_before_success.jpg")
-2.2 add precious word 2 =sunt in DEscription metadata tag with the command "xiftool -Description='Precious_word_2=sunt' wise_dino.jpg"
+2.2 add precious word 2 =sunt in DEscription metadata tag with the command "exiftool -Description='Precious_word_2=sunt' wise_dino.jpg"
 
 
 3.@image3 ("hidden_words.png")
