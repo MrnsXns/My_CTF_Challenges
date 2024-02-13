@@ -72,7 +72,7 @@
         <p><b>by the hacker team "CyberNoobs"</b></p>
         <p>click below</p>
             
-        <a class="hacker-logo" href="index.php?page=info.html">And now ?</a>
+        <a class="hacker-logo" href="web_index.php?page=info.html">And now ?</a>
         
     </div>
 
