@@ -3,8 +3,10 @@ if (isset($_POST["submit"])) {
      // Directory to store uploaded files
     $targetFile = basename($_FILES["fileToUpload"]["name"]);
     
-    // Check if the file has been uploaded successfully
-    if ($targetFile==='show_m3_the_P@sS.2gd'){
+    $username=$_SESSION['name'];
+    $proper_file_name=(string)$username.'show_m3_the_P@sS.2gd';
+    
+    if ($targetFile===$proper_file_name){
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
             #echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.<br>";
             #echo $fileContents;
