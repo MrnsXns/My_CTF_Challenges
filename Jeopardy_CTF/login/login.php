@@ -14,6 +14,11 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
         <link href="login_style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
+
+		<div class="greeting">	
+    		<span>JeopardyCTF <br> <b>Web App</b></span>
+  		</div>
+		
 		<div class="login">
 			<h1 id="login_header">Login</h1>
 			<form action="authenticate.php" method="post">
