@@ -66,3 +66,17 @@ body {
     
     
 }
+
+.greeting {
+    text-align: center;
+
+}
+
+.greeting span{
+    
+    font-family: luminary, fantasy;
+    font-size:50px;
+    text-shadow: 6px 6px 6px rgb(66, 100, 173)
+
+}
+
