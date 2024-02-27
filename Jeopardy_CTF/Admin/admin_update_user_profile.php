@@ -35,7 +35,7 @@
             
         
         }
-        else {echo '1';}
+        
         if (isset($_GET['f_username'])){
 
             if ($stmt = $con->prepare('UPDATE users SET username=? WHERE userId=?')) {
@@ -47,7 +47,7 @@
                 header('Location: http://localhost/Jeopardy_CTF/Admin/admin_page.php');
             
             }
-        }else {echo '2';}
+        }
 
         if (isset($_GET['l_email'])){
 
