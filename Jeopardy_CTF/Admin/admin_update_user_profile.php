@@ -15,8 +15,7 @@
         exit('Failed to connect to MySQL: ' . mysqli_connect_error());
     }
 
-    //echo $_GET['f_userid'];
-    //if (isset($_GET['Update'])){
+    
 
         if (isset($_GET['f_username']) && isset($_GET['l_email'])){
 
