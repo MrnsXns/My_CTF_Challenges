@@ -48,7 +48,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Manage users</h1>
+                        <h1 class="mt-4">Manage users | JeopardyCTF Web App</h1>
                         <ol class="breadcrumb mb-4">
                             <!--add new user--->
                             <li class="breadcrumb-item"><a href='http://<?=$_SESSION["server_ip"]?>/Jeopardy_CTF/registration/registration_form.php' title='Add new user'><i class="fa fa-user-plus"></i><b>  Add new user </b></a></li>
