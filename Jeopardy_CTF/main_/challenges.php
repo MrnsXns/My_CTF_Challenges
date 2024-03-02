@@ -109,7 +109,7 @@ if (!isset($_SESSION['loggedin'])) {
             <p style="font-size:50px;">30 points</p>
              <p>A notorious hacking group, known for their unparalleled skills, has compromise the website of CyberCom company.</p>
              <p>Your mission, as a cybersecurity professional, is to <b>find the hidden flag in CyberCom's legit website.</b></p>
-             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag{...}.</i></p>
+             <p><i><u>Hint 1:</u></i> The flag has the format <i>flag_{...}.</i></p>
              <p><i><u>Hint 2:</u></i> You must, somehow, gain access to CyberCom's compromised web server.</p>
              <p><i><u>Hint 3:</u></i> Hackers have a message for you.</p>`
             
