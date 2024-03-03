@@ -94,7 +94,7 @@ if (!isset($_SESSION['loggedin'])) {
 
             document.getElementById('modalContent').innerHTML = challenge_descr;
             document.getElementById('anchor').setAttribute("download","re_challenge_binary");
-            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/re_challenge/feelLucky.c';
+            document.getElementById('anchor').href='http://'+'<?=$_SESSION["server_ip"]?>'+'/Jeopardy_CTF/re_challenge/re_challenge';
             document.getElementById('anchor').textContent="Download binary";
             document.getElementById("anchor").style.color = "#ff0000";
             document.getElementById('flagForm')[0].name=  'REflag';
