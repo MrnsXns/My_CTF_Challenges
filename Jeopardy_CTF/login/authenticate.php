@@ -1,6 +1,6 @@
 <?php
 
-ini_set('session.cookie_httponly', 1)
+ini_set('session.cookie_httponly', 1);
 	
 session_start();
 
@@ -61,4 +61,5 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
 	$stmt->close();
 }
 ?>
+
 
