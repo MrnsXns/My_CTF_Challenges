@@ -15,6 +15,8 @@
   <body>
 </body>
 <?php
+ini_set('session.cookie_httponly', 1);
+
 session_start();
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'ctf_user';
@@ -95,3 +97,4 @@ for ($i=0;$i<count($username_data);$i++){
 
 $con->close();
 ?>
+
