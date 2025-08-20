@@ -5,6 +5,7 @@
 
 <?php 
 
+    ini_set('session.cookie_httponly', 1);
 
     session_start();
     $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
@@ -57,4 +58,5 @@ else{echo "something went wrong with edit_profile page";}
 <input type="submit" value="Update"  onClick="return confirm('Apply change to user with ID =  <?php echo $_GET['Userid'];?>?');">
 </form>
 </body> 
+
 </html> 
