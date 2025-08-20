@@ -1,4 +1,7 @@
 <?php
+
+ini_set('session.cookie_httponly', 1);
+
 session_start();
 
 $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
@@ -96,3 +99,4 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
