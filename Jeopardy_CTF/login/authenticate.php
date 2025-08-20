@@ -1,4 +1,7 @@
 <?php
+
+ini_set('session.cookie_httponly', 1)
+	
 session_start();
 
 $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
@@ -58,3 +61,4 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
 	$stmt->close();
 }
 ?>
+
