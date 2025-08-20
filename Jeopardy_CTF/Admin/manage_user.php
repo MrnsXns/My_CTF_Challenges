@@ -1,4 +1,7 @@
 <?php 
+
+ini_set('session.cookie_httponly', 1);
+
 session_start();
 // Connect to database.
 $DATABASE_HOST = 'localhost';
@@ -103,6 +106,7 @@ if (isset($_GET['userId']) && isset($_GET['usrnm']) && isset($_GET['email'])){
     <inpu.t type="text" id="lname" name="lname" value="Doe"><br><br>';
 }
     
+
 
 
    ?>
