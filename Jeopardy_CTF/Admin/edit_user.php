@@ -2,51 +2,6 @@
 
 
 
-
-<?php 
-
-    ini_set('session.cookie_httponly', 1);
-
-    session_start();
-    $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
-    // Connect to database.
-    $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'root';
-    $DATABASE_PASS = '';
-    $DATABASE_NAME = 'ctf_db';
-    
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-    if (mysqli_connect_errno()) {
-        // If there is an error with the connection, stop the script and display the error.
-        exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-    }
-
-
-
-
-/*
-if ( isset($_GET['usrnm']) && isset($_GET['email'])){
-
-echo '
-<!DOCTYPE html>
-<html>
-<body>
-<label for="fname">Username:</label><input type="text" id="f_username" name="f_username" value="'.$_GET['usrnm'].' ">&nbsp <button>Update username</button></a><br><br>
-<label for="lname">E-mail:</label><input type="text" id="l_email" name="l_email" value="'.$_GET['email'].'">&nbsp <button onclick="myFest(this)"> Update email of user</button><br><br>
-</body> 
-</html> 
-<scritp>var url = "edit_user.php?update_usrnm=1&new_username=" + document.getElementById("f_username").value;
-var element = document.getElementById("update_link");
-element.setAttribute("href",url)</script>';
-
-}
-
-
-if (isset($_GET['update_usrnm'])){echo "ok";}
-else{echo "something went wrong with edit_profile page";}
-*/
-?>
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -60,3 +15,4 @@ else{echo "something went wrong with edit_profile page";}
 </body> 
 
 </html> 
+
