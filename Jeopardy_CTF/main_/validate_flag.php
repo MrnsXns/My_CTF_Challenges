@@ -2,7 +2,7 @@
 	ini_set('session.cookie_httponly', 1);
     session_start();
 
-    $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
+   
     
    
     function updateDatabase($col,$chal_points){
@@ -29,7 +29,7 @@
             $stmt->bind_param('is', $value,$user);
             $stmt->execute();
             
-            header('Location: http://'.$_SERVER['SERVER_ADDR'].'/Jeopardy_CTF/main_/congrats_page.php');
+            header('Location:/Jeopardy_CTF/main_/congrats_page.php');
             
         } else {
             // Something is wrong with the SQL statement, so you must check to make sure your accounts table exists with all three fields.
@@ -81,5 +81,6 @@
     }
     
 ?> 
+
 
 
