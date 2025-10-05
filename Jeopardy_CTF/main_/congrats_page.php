@@ -4,7 +4,7 @@ ini_set('session.cookie_httponly', 1);
 
 session_start();
 
-$_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +87,7 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
                     <h4 class="congratulation-contents-title"> Well Done <b><?=$_SESSION["name"]?></b> ! </h4>
                     <p class="congratulation-contents-para"> Nice work! Proceed to the next challenge. </p>
                     <div class="btn-wrapper mt-4">
-                        <a href='http://<?=$_SESSION["server_ip"]?>/Jeopardy_CTF/main_/challenges.php' class="cmn-btn btn-bg-1"> Back to Challenges </a>
+                        <a href='/Jeopardy_CTF/main_/challenges.php' class="cmn-btn btn-bg-1"> Back to Challenges </a>
                     </div>
                 </div>
             </div>
@@ -99,4 +99,5 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
