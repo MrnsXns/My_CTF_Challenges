@@ -4,7 +4,7 @@ ini_set('session.cookie_httponly', 1);
 
 session_start();
 
-$_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
+
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +37,10 @@ $_SESSION["server_ip"]=$_SERVER['SERVER_ADDR'];
 		</div>
 
 		<div class="registration_link" >
-			<p><b> Don't have an account?</b><a href='http://<?=$_SESSION["server_ip"]?>/Jeopardy_CTF/registration/registration_form.php' style="color:blue" ><b>Register!</b></a>.</p>
+			<p><b> Don't have an account?</b><a href='/Jeopardy_CTF/registration/registration_form.php' style="color:blue" ><b>Register!</b></a>.</p>
 		</div>
 		
 	</body>
 </html>
+
 
