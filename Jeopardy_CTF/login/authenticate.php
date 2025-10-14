@@ -46,7 +46,7 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
             $_SESSION['id'] = $userId;
             echo 'Welcome ' . $_SESSION['name'] . '!';
             
-            header('Location:'/Jeopardy_CTF/main_/challenges.php');
+            header('Location:/Jeopardy_CTF/main_/challenges.php');
         } else {
             // Incorrect password
             echo 'Incorrect username and/or password!';
@@ -61,6 +61,7 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
 	$stmt->close();
 }
 ?>
+
 
 
 
