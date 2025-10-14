@@ -15,7 +15,7 @@ $DATABASE_NAME = 'ctf_db';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
 	// If there is an error with the connection, stop the script and display the error.
-	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+	exit('Database connection failed. Please try again later.');
 }
 
 // Now we check if the data from the login form was submitted, isset() will check if the data exists.
@@ -46,20 +46,22 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
             $_SESSION['id'] = $userId;
             
             header('Location:/Jeopardy_CTF/main_/challenges.php');
+			exit();
         } else {
             // Incorrect password
-            echo 'Incorrect username and/or password!';
+            echo 'Incorrect username or password!';
             
             
         }
     } else {
         // Incorrect username
-        echo 'Incorrect username and/or password!';
+        echo 'Incorrect username or password!';
     }
 
 	$stmt->close();
 }
 ?>
+
 
 
 
