@@ -44,7 +44,6 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $userId;
-            echo 'Welcome ' . $_SESSION['name'] . '!';
             
             header('Location:/Jeopardy_CTF/main_/challenges.php');
         } else {
@@ -61,6 +60,7 @@ if ($stmt = $con->prepare('SELECT userId, password FROM users WHERE username = ?
 	$stmt->close();
 }
 ?>
+
 
 
 
