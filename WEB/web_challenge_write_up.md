@@ -31,7 +31,7 @@ Clicking the red button triggers a URL with a `page` parameter:
 index.php?page=info.html
 ```
 <p align="center">
-	<img src="images/hacker_message.png" width="500" height="300" />
+	<img src="/images/hacker_message.png" width="500" height="300" />
 </p>
 
 ---
@@ -201,4 +201,5 @@ Absence of sanitization such as `realpath()`.
 - Encoding is not an effective security control.
 - Upload validation must handle encoded and obfuscated payloads.
 - Access to source code is often the pivot point in exploitation chains.
+
 
